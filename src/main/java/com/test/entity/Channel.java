@@ -11,7 +11,7 @@ import java.util.Set;
 public class Channel {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     @Column
@@ -69,5 +69,13 @@ public class Channel {
 
     public void setSubscribers(Set<Subscriber> subscribers) {
         this.subscribers = subscribers;
+    }
+
+    @Override
+    public String toString() {
+        return "Channel{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                '}';
     }
 }

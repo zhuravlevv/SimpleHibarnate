@@ -9,7 +9,7 @@ import java.util.Set;
 public class Subscriber {
 
     @Id
-    @GeneratedValue(strategy = GenerationType.AUTO)
+    @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Integer id;
 
     private String name;
@@ -51,5 +51,14 @@ public class Subscriber {
 
     public void setChannels(Set<Channel> channels) {
         this.channels = channels;
+    }
+
+    @Override
+    public String toString() {
+        return "Subscriber{" +
+                "id=" + id +
+                ", name='" + name + '\'' +
+                ", channels=" + channels +
+                '}';
     }
 }
